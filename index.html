@@ -8,18 +8,14 @@
 </head>
 <body>
     <script>
-        //Create a function that randomly returns a string
-        function getComputerChoice () {
-            //Create an array
-            const computerChoice = ["Rock", "Paper", "Scissors"];
-            //Program to get a random item from an array
-            function getRandomItem (computerChoice) {
-                const randomIndex = Math.floor(Math.random () * computerChoice.length);
-                const item = computerChoice[randomIndex];
-                return item;
-            }
-            //Return the choice
+        //Declare the function
+        function getComputerChoice (choice) {
+            //Get a random item from an array
+            return choice[Math.floor(Math.random() * choice.length)];
         }
+        //Create variable containing the array
+        const choice = ["Rock", "Paper", "Scissors"];
+        console.log(getComputerChoice(choice));
     </script>
 </body>
 </html>
