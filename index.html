@@ -13,6 +13,11 @@
             //Create an array
             const computerChoice = ["Rock", "Paper", "Scissors"];
             //Program to get a random item from an array
+            function getRandomItem (computerChoice) {
+                const randomIndex = Math.floor(Math.random () * computerChoice.length);
+                const item = computerChoice[randomIndex];
+                return item;
+            }
             //Return the choice
         }
     </script>
