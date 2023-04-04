@@ -9,13 +9,32 @@
 <body>
     <script>
         //Declare the function
-        function getComputerChoice (choice) {
+        function getComputerChoice(choice) {
             //Get a random item from an array
             return choice[Math.floor(Math.random() * choice.length)];
         }
         //Create variable containing the array
         const choice = ["Rock", "Paper", "Scissors"];
-        console.log(getComputerChoice(choice));
+
+        //Program that runs one single round
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toUpperCase() === ROCK && computerSelection.toUpperCase() === PAPER) {
+                return "You lose! Paper beats Rock";
+            } else if (playerSelection.toUpperCase () === ROCK && computerSelection.toUpperCase() === SCISSORS) {
+                return "You win! Rock beats scissors";
+            } else if (playerSelection.toUpperCase() === PAPER && computerSelection.toUpperCase() === SCISSORS) {
+                return "You lose! Scissors beats Paper";
+            } else if (playerSelection.toUpperCase() === PAPER && computerSelection.toUpperCase() === ROCK) {
+                return "You win! Paper beats Rock";
+            } else if (playerSelection.toUpperCase() === SCISSORS && computerSelection.toUpperCase() === PAPER) {
+                return "You win! Scissors beats Paper";
+            } else if (playerSelection.toUpperCase() === SCISSORS && computerSelection.toUpperCase() === ROCK) {
+                return "You lose! Rock beats Scissors";
+            } else {
+                return "It's a tie"
+            }
+        }
+        
     </script>
 </body>
 </html>
