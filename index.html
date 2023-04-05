@@ -34,9 +34,22 @@
                 return "It's a tie"
             }
         }
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice(choice);
-        console.log(playRound(playerSelection, computerSelection));
+        //Program that plays a 5 round game
+
+        let playerSelection = window.prompt("What's your choice?");
+
+        function game() {
+            if (playerSelection.toUpperCase() === "ROCK" || "PAPER" || "SCISSORS") {
+                return playRound(playerSelection, getComputerChoice(choice));
+            } else {
+                return "You didn't make a choice";
+            }
+        }
+        console.log(game());
+        // Play 1 round
+        //Convert result into score
+        //Repeat 4 more times
+        //Give a winner or a loser
     </script>
 </body>
 </html>
