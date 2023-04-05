@@ -19,17 +19,17 @@
         //Program that runs one single round
         function playRound(playerSelection, computerSelection) {
             if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER") {
-                return "You lose! Paper beats Rock";
+                return "You lose!";
             } else if (playerSelection.toUpperCase () === "ROCK" && computerSelection.toUpperCase() === "SCISSORS") {
-                return "You win! Rock beats scissors";
+                return "You win!";
             } else if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS") {
-                return "You lose! Scissors beats Paper";
+                return "You lose!";
             } else if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK") {
-                return "You win! Paper beats Rock";
+                return "You win!";
             } else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER") {
-                return "You win! Scissors beats Paper";
+                return "You win!";
             } else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK") {
-                return "You lose! Rock beats Scissors";
+                return "You lose!";
             } else {
                 return "It's a tie"
             }
@@ -39,6 +39,7 @@
         let playerSelection = window.prompt("What's your choice?");
 
         function game() {
+            //Play 1 round
             if (playerSelection.toUpperCase() === "ROCK" || "PAPER" || "SCISSORS") {
                 return playRound(playerSelection, getComputerChoice(choice));
             } else {
@@ -46,7 +47,6 @@
             }
         }
         console.log(game());
-        // Play 1 round
         //Convert result into score
         //Repeat 4 more times
         //Give a winner or a loser
