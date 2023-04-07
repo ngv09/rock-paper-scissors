@@ -34,22 +34,43 @@
                 return "It's a tie"
             }
         }
-        //Program that plays a 5 round game
+        //Declare new function to play 5 rounds
 
-        let playerSelection = window.prompt("What's your choice?");
+        function game(rounds) {
+            //Create variables to keep track of the score
+            let playerScore = 0;
+            let computerScore = 0;
 
-        function game() {
-            //Play 1 round
-            if (playerSelection.toUpperCase() === "ROCK" || "PAPER" || "SCISSORS") {
-                return playRound(playerSelection, getComputerChoice(choice));
+            //Write for loop to play a number of rounds
+            for (let i = 1; i<= rounds; i++) {
+                //Declare variables for player and computer selection
+                let playerSelection = prompt(`This is round ${i}: Enter your choice rock, paper or scissors`);
+                let computerSelection = getComputerChoice(choice);
+                //Declare variable to store the result of the round
+                let result = playRound(playerSelection, computerSelection);
+
+                //Console.log the result
+                console.log(`Round ${i}: ${result}`);
+
+                //Keep track of the score
+                if (result === "You win!") {
+                    playerScore++;
+                } else if (result === "You lose!") {
+                    computerScore++;
+                }
+            }
+
+            //Check results
+            if (playerScore > computerScore) {
+                console.log(`You win the game! Your score is ${playerScore} and the computer score is ${computerScore}`);
+            } else if (computerScore > playerScore) {
+                console.log(`You lost. Your score is ${playerScore} and the computer score is ${computerScore}`);
             } else {
-                return "You didn't make a choice";
+                console.log(`The game is a tie with a score of ${playerScore} - ${computerScore}`);
             }
         }
-        console.log(game());
-        //Convert result into score
-        //Repeat 4 more times
-        //Give a winner or a loser
+
+        console.log(game(5));
     </script>
 </body>
 </html>
